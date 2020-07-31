@@ -15,7 +15,11 @@ function getResults (query) {
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
         return weather.json();
-    }).then(displayResults);
+    }).then(displayResults)
+    .catch( function (err) {
+        document.getElementById("error").innerHTML=err.message;
+})
+
 }
 
 function displayResults (weather) {
