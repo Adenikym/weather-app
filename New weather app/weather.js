@@ -17,7 +17,7 @@ function getResults (query) {
         return weather.json();
     }).then(displayResults)
     .catch( function (err) {
-        document.getElementById("error").innerHTML=err.message="please enter valid location";
+        document.getElementById("error").innerHTML=err.message="please enter valid city";
 
 })
 
